@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/ghp-react/static/css/main.1f31f066.chunk.css",
+    "main.js": "/ghp-react/static/js/main.adafe701.chunk.js",
+    "main.js.map": "/ghp-react/static/js/main.adafe701.chunk.js.map",
+    "runtime-main.js": "/ghp-react/static/js/runtime-main.3dda95ab.js",
+    "runtime-main.js.map": "/ghp-react/static/js/runtime-main.3dda95ab.js.map",
+    "static/js/2.6ed33c5d.chunk.js": "/ghp-react/static/js/2.6ed33c5d.chunk.js",
+    "static/js/2.6ed33c5d.chunk.js.map": "/ghp-react/static/js/2.6ed33c5d.chunk.js.map",
+    "index.html": "/ghp-react/index.html",
+    "precache-manifest.c772ed486d9eb55fda47af544fedd58b.js": "/ghp-react/precache-manifest.c772ed486d9eb55fda47af544fedd58b.js",
+    "service-worker.js": "/ghp-react/service-worker.js",
+    "static/css/main.1f31f066.chunk.css.map": "/ghp-react/static/css/main.1f31f066.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3dda95ab.js",
+    "static/js/2.6ed33c5d.chunk.js",
+    "static/css/main.1f31f066.chunk.css",
+    "static/js/main.adafe701.chunk.js"
+  ]
+}
