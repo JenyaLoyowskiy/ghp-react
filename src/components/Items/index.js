@@ -34,7 +34,7 @@ export default class Items extends React.Component {
       localStorage.removeItem('tasks');
     }
     if (elem === this.state.activeItem) {
-      this.state.activeItem = undefined;
+      this.setState({activeItem: undefined})
     }
   }
   render(){
