@@ -1,19 +1,12 @@
 import React from 'react';
 
-class Comment extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render(){
-    return(
-      <div>
-        <hr className="bottom-line" style={{width: '100%', height: '2px', backgroundColor: '#f8f8f8', border: 'none'}}/>
-        <div className={"profile-image " + this.props.color}></div>
-        <div className="message">{this.props.message}</div>
-      </div>
-    )
-  }
-}
+const Comment = (props)=>(
+  <div>
+    <hr className="bottom-line" style={{width: '100%', height: '2px', backgroundColor: '#f8f8f8', border: 'none'}}/>
+    <div className={"profile-image " + props.color}></div>
+    <div className="message">{props.message}</div>
+  </div>
+)
 
 export default class Comments extends React.Component {
   state = {
@@ -21,16 +14,12 @@ export default class Comments extends React.Component {
   }
   constructor(props) {
     super(props)
-    this.state = {
-        text: "Initial State"
-    }
   }
   addComment(event){
     event.preventDefault();
     let { currentTask } = this.props;
     if (currentTask) {
       if (this.state.inputData) {
-        console.log(localStorage.getItem(currentTask));
         localStorage.setItem(currentTask, localStorage.getItem(currentTask) ? localStorage.getItem(currentTask) + '<break>' + this.state.inputData : this.state.inputData);
         this.setState({currentComment: this.state.inputData, inputData: ''});
         this.props.updateState('comment');
@@ -40,10 +29,6 @@ export default class Comments extends React.Component {
     } else {
       alert('Please select a task!')
     }
-  }
-  renderTaskName(){
-    console.log(this.props.currentTask);
-    return this.props.currentTask ? this.props.currentTask : '';
   }
   renderComments(){
     const { currentTask } = this.props;
@@ -58,6 +43,7 @@ export default class Comments extends React.Component {
               <Comment
                 message={el}
                 color={color}
+                key={Math.random()}
               />
             )
           })
@@ -68,16 +54,16 @@ export default class Comments extends React.Component {
   render(){
     return(
       <div className="comments">
-        <h1>{this.renderTaskName()}</h1>
+        <h1>{this.props.currentTask ? this.props.currentTask : ''}</h1>
         <div className="comment-wrapper">
           {
             this.renderComments()
           }
         </div>
         <form
-        className="comment-subm"
-        onSubmit={(event)=>{
-          this.addComment(event);
+          className="comment-subm"
+          onSubmit={(event)=>{
+            this.addComment(event);
         }}
         >
           <input

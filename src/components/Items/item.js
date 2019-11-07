@@ -1,9 +1,6 @@
 import React from 'react';
 
 class Item extends React.Component{
-  state = {
-    active: false
-  }
   constructor(props){
     super(props);
   }
@@ -23,7 +20,7 @@ class Item extends React.Component{
             : ''}
         <button
           className="delete-btn"
-          onClick={()=>{this.props.deleteCard()}}
+          onClick={this.props.deleteCard}
         >Delete</button>
         <hr style={{width: '90%', height: '2px', backgroundColor: '#f8f8f8', border: 'none'}}/>
       </div>
