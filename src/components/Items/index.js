@@ -17,8 +17,8 @@ export default class Items extends React.Component {
   addCard(){
     let { data, inputData } = this.state;
     if (inputData) {
-      localStorage.setItem('tasks', data ? data+ ',' + inputData : inputData);
-      this.setState({data: localStorage.getItem('tasks').split(','), inputData: ''});
+      localStorage.setItem('tasks', data ? data+ '<break>' + inputData : inputData);
+      this.setState({data: localStorage.getItem('tasks').split('<break>'), inputData: ''});
     } else {
       alert('Enter the name of the task!');
     }
