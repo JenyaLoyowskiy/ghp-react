@@ -5,7 +5,7 @@ import Comments from '../Comments';
 export default class Items extends React.Component {
   state = {
     inputData: '',
-    data: localStorage.getItem('tasks') ? localStorage.getItem('tasks').split(',') : '',
+    data: localStorage.getItem('tasks') ? localStorage.getItem('tasks').split('<break>') : '',
     activeItem: undefined
   }
   constructor(props){
@@ -17,8 +17,9 @@ export default class Items extends React.Component {
   addCard(){
     let { data, inputData } = this.state;
     if (inputData) {
-      localStorage.setItem('tasks', data ? data+ '<break>' + inputData : inputData);
+      localStorage.setItem('tasks', data ? localStorage.getItem('tasks') + '<break>' + inputData : inputData);
       this.setState({data: localStorage.getItem('tasks').split('<break>'), inputData: ''});
+      console.log(data);
     } else {
       alert('Enter the name of the task!');
     }
